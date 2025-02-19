@@ -1,95 +1,84 @@
-import Image from "next/image";
+import { PiHandWavingBold } from "react-icons/pi";
 import styles from "./page.module.css";
+import { TypingAnimation } from "@/components/TypingAnimation";
+import {
+  LuDownload,
+  LuGithub,
+  LuLinkedin,
+  LuMail,
+  LuMoveRight,
+  LuMoveUpRight,
+  LuPhone,
+} from "react-icons/lu";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
+  const links = [
+    {
+      icon: <LuLinkedin />,
+      link: "https://www.linkedin.com/in/abanoub-abd-elmessih/",
+    },
+    { icon: <LuGithub />, link: "https://github.com/Abanoub-Abd-Elmessih" },
+    { icon: <LuMail />, link: "mailto:abanoubabdelmessih110@gmail.com" },
+    { icon: <LuPhone />, link: "tel:+201559566765" },
+  ];
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <section className="row py-3">
+      <div className="col-lg-7 order-lg-2 ">
+        <h2 className={`display-3 ${styles.heading}`}>
+          Hello I&apos;m Abanoub <PiHandWavingBold />
+        </h2>
+        <div
+          className={`d-flex align-items-center gap-3 ${styles.animation_warper}`}
+        >
+          <span className={styles.hr}></span> I&apos;m <TypingAnimation />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <p className="text-muted letter_spacing">
+          I&apos;m Front End Developer based in Egypt, and I&apos;m very
+          passionate and dedicated to my work
+        </p>
+        <div className="d-flex gap-3">
+          <button className={`btn btn-dark ${styles.buttons}`}>
+            <Link href={"/contact"}>
+              Contact me <LuMoveUpRight />
+            </Link>
+          </button>
+          <button className={`btn btn-dark ${styles.buttons}`}>
+            <a href="">
+              Download CV <LuDownload />
+            </a>
+          </button>
+        </div>
+      </div>
+      <div className="mt-3 mt-lg-0 col-lg-1 d-flex flex-lg-column justify-content-between">
+        <ul className="fs-3 d-flex flex-lg-column gap-3 p-0">
+          {links.map((link) => (
+            <li key={link.link}>
+              <a
+                href={link.link}
+                className={styles.contact_links}
+                target="_blank"
+              >
+                {link.icon}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <Link href={"/about"}>
+          About <LuMoveRight />
+        </Link>
+      </div>
+      <div className="col-lg-4 order-lg-3">
+        <Image
+          src={"/abanoub.jpg"}
+          alt="my photo"
+          width={500}
+          height={500}
+          className="rounded-5"
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+        />
+      </div>
+    </section>
   );
 }
