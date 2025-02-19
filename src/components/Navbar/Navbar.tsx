@@ -31,7 +31,7 @@ export const Navbar = () => {
             className={`navbar-nav ms-auto gap-2 gap-lg-4 ${styles.navbarList}`}
           >
             {links.map((link) => (
-              <li key={link.path} className="nav-item">
+              <li key={link.path} className={styles.nav_link}>
                 <Link className="nav-link" href={link.path}>
                   {link.name}
                 </Link>

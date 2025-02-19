@@ -25,7 +25,7 @@ export default function Home() {
   ];
   return (
     <section className="row py-3">
-      <div className="col-lg-7 order-lg-2 ">
+      <div className="col-xl-7 order-xl-2 d-flex flex-column justify-content-center">
         <h2 className={`display-3 ${styles.heading}`}>
           Hello I&apos;m Abanoub <PiHandWavingBold />
         </h2>
@@ -35,8 +35,8 @@ export default function Home() {
           <span className={styles.hr}></span> I&apos;m <TypingAnimation />
         </div>
         <p className="text-muted letter_spacing">
-          I&apos;m Front End Developer based in Egypt, and I&apos;m very
-          passionate and dedicated to my work
+          I&apos;m a Front-End Developer based in Egypt, with a strong passion
+          for creating seamless and engaging user experiences.
         </p>
         <div className="d-flex gap-3">
           <button className={`btn btn-dark ${styles.buttons}`}>
@@ -45,14 +45,14 @@ export default function Home() {
             </Link>
           </button>
           <button className={`btn btn-dark ${styles.buttons}`}>
-            <a href="">
+            <a href="/abanoub_abdelmessihResume.pdf" download={true}>
               Download CV <LuDownload />
             </a>
           </button>
         </div>
       </div>
-      <div className="mt-3 mt-lg-0 col-lg-1 d-flex flex-lg-column justify-content-between">
-        <ul className="fs-3 d-flex flex-lg-column gap-3 p-0">
+      <div className="mt-3 mt-xl-0 col-xl-1 d-flex flex-xl-column justify-content-between">
+        <ul className="fs-3 d-flex flex-xl-column gap-3 p-0">
           {links.map((link) => (
             <li key={link.link}>
               <a
@@ -69,14 +69,13 @@ export default function Home() {
           About <LuMoveRight />
         </Link>
       </div>
-      <div className="col-lg-4 order-lg-3">
+      <div className="col-xl-4 order-xl-3 text-center">
         <Image
           src={"/abanoub.jpg"}
           alt="my photo"
-          width={500}
-          height={500}
-          className="rounded-5"
-          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          width={350}
+          height={350}
+          className={styles.personal_image}
         />
       </div>
     </section>

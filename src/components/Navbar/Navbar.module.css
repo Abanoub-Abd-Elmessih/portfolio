@@ -5,6 +5,14 @@
 .navbarBrand {
   font-weight: 400;
 }
+
+.nav_link {
+  transition: all 0.5s;
+}
+.nav_link:hover {
+  transform: translateY(-5px);
+}
+
 @media (min-width: 992px) {
   .navbarToggler {
     display: none;

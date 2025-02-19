@@ -26,7 +26,7 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        <main className="container flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+        <main className="container flex-grow-1 d-flex flex-column justify-content-lg-center align-items-lg-center">
           {children}
         </main>
         <Script
