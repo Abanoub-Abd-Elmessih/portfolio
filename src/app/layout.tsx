@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "mdb-ui-kit/css/mdb.min.css";
 import "./globals.css";
 import Script from "next/script";
 import { Navbar } from "@/components/Navbar/Navbar";
@@ -26,11 +27,15 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        <main className="container flex-grow-1 d-flex flex-column justify-content-lg-center align-items-lg-center">
+        <main className="container px-3 flex-grow-1 d-flex flex-column justify-content-lg-center">
           {children}
         </main>
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
           strategy="afterInteractive"
         />
       </body>

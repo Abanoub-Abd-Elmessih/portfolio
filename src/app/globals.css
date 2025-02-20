@@ -17,5 +17,24 @@ ul {
   list-style: none;
 }
 .letter_spacing {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+.wrapppp {
+  width: 100px;
+  height: 2px;
+  background-color: #d1d5db;
+  display: inline-block;
 }
