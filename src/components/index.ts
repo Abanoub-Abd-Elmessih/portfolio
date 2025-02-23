@@ -1,8 +1,9 @@
-export { Navbar } from "./Navbar/Navbar";
-export { Header } from "./Header";
+export { Navbar } from "./Navbar";
+export { Divider } from "./Divider";
+export { TypingAnimation } from "./TypingAnimation";
+export { Button } from "./Button";
+export { MyLinks } from "./MyLinks";
+export { Heading } from "./Heading";
+export { TimeLine } from "./TimeLine";
+export { TechStack } from "./TechStack";
 export { ContactForm } from "./ContactForm";
-export { ContactLinks } from "./ContactLinks";
-export { CollapseBtn } from "./CollapseBtn";
-export { AboutCard } from "./AboutCard/AboutCard";
-export { TimeLine } from "./TimeLine/TimeLine";
-export { SkillsComponent } from "./SkillsComponent/SkillsComponent";

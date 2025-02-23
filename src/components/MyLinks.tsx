@@ -17,12 +17,13 @@ export const links = [
   },
   { icon: <LuPhone />, link: "tel:+201559566765", name: "+20 1559566765" },
 ];
-export const ContactLinks = () => {
+
+export const MyLinks = () => {
   return (
-    <ul className="fs-3 d-flex flex-xl-column gap-3 p-0">
+    <ul className="flex xl:flex-col gap-3 xl:gap-6 text-2xl">
       {links.map((link) => (
-        <li key={link.link} className="list_link">
-          <a href={link.link} className="contact_links" target="_blank">
+        <li className="hover:rotate-90 duration-300 w-fit" key={link.link}>
+          <a href={link.link} target="_blank">
             {link.icon}
           </a>
         </li>

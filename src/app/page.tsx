@@ -1,56 +1,64 @@
-import { PiHandWavingBold } from "react-icons/pi";
-import styles from "./page.module.css";
-import { TypingAnimation } from "@/components/TypingAnimation";
-import { LuDownload, LuMoveRight, LuMoveUpRight } from "react-icons/lu";
-import Link from "next/link";
+import { Button, Divider, MyLinks, TypingAnimation } from "@/components";
 import Image from "next/image";
-import { ContactLinks } from "@/components";
+import Link from "next/link";
+import { LuDownload, LuMoveRight, LuMoveUpRight } from "react-icons/lu";
+import { PiHandWavingBold } from "react-icons/pi";
 
 export default function Home() {
   return (
-    <section className="center-screen">
-      <div className="row flex-row-reverse px-3 my-3">
-        <div className="col-xl-4 text-center">
-          <Image
-            src={"/abanoub.jpg"}
-            alt="my photo"
-            width={350}
-            height={350}
-            className={styles.personal_image}
-          />
-        </div>
-        <div className="my-3 mt-xl-0 col-xl-7 d-flex flex-column justify-content-center p-0">
-          <h2 className={`display-3 ${styles.heading}`}>
-            Hello I&apos;m Abanoub <PiHandWavingBold />
-          </h2>
-          <div
-            className={`d-flex align-items-center gap-3 ${styles.animation_warper}`}
-          >
-            <span className={styles.hr}></span> I&apos;m <TypingAnimation />
-          </div>
-          <p className="text-muted letter_spacing">
-            I&apos;m a Front-End Developer based in Egypt, with a strong passion
-            for creating seamless and engaging user experiences.
+    <section className="container py-10 flex-grow flex flex-col xl:flex-row-reverse xl:items-center xl:justify-around gap-7 text-light_gray">
+      {/* Image Section */}
+      <div className="center-screen">
+        <Image
+          src={"/abanoub.jpg"}
+          alt="my photo"
+          width={350}
+          height={350}
+          className="rounded-full aspect-square object-cover object-top border-black border-2 grayscale hover:grayscale-0 transition-all duration-300"
+        />
+      </div>
+      {/* Main Section */}
+      <div className="flex flex-col gap-4">
+        <h3 className="text-4xl lg:text-6xl font-medium tracking-wide">
+          Hello I&apos;m Abanoub
+          <PiHandWavingBold className="inline-block ms-2" />
+        </h3>
+        {/* Animation */}
+        <div className="flex items-center gap-3">
+          <Divider />
+          <p className="text-xl lg:text-3xl tracking-wide">
+            I&apos;m <TypingAnimation />
           </p>
-          <div className="d-flex gap-3">
-            <button type="button" className="btn btn-dark" data-mdb-ripple-init>
-              <Link href={"/contact"}>
-                Contact me <LuMoveUpRight />
-              </Link>
-            </button>
-            <button type="button" className="btn btn-dark" data-mdb-ripple-init>
-              <a href="/abanoub_abdelmessihResume.pdf" download={true}>
-                Download CV <LuDownload />
-              </a>
-            </button>
-          </div>
         </div>
-        <div className="col-xl-1 d-flex flex-xl-column align-items-center align-items-lg-start justify-content-between p-0">
-          <ContactLinks />
-          <Link href={"/about"} className="">
-            About <LuMoveRight />
-          </Link>
+        {/* main paragraph */}
+        <p className="text-gray-500 lg:max-w-3xl">
+          I&apos;m a Front-End Developer based in Egypt, with a strong passion
+          for creating seamless and engaging user experiences.
+        </p>
+        {/* Buttons */}
+        <div className="flex gap-3">
+          <Button>
+            <Link href={"/contact"}>
+              Contact Me
+              <LuMoveUpRight className="inline-block" color="white" />
+            </Link>
+          </Button>
+          <Button>
+            <a href="/abanoub_abdelmessihResume.pdf" download={true}>
+              Download CV <LuDownload className="inline-block" color="white" />
+            </a>
+          </Button>
         </div>
+      </div>
+      {/* Links Section */}
+      <div className="flex justify-between xl:flex-col gap-10">
+        <MyLinks />
+        <Link
+          href={"/about"}
+          className="text-lg flex items-center gap-1 self-end"
+        >
+          About <LuMoveRight />
+        </Link>
       </div>
     </section>
   );

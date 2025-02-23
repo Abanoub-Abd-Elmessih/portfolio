@@ -1,7 +1,6 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import styles from "./SkillsComponent.module.css";
 import {
   SiPostman,
   SiReactquery,
@@ -40,7 +39,7 @@ const tools = [
   { icon: <SiStyledcomponents />, name: "Styled Component" },
 ];
 
-export const SkillsComponent = () => {
+export const TechStack = () => {
   const iconVariants = (delay: number): Variants => ({
     initial: { y: -10 },
     animate: {
@@ -55,17 +54,19 @@ export const SkillsComponent = () => {
     },
   });
   return (
-    <div className="d-flex flex-wrap justify-content-center mt-4 gap-4">
+    <div className="flex justify-center gap-5 mt-3 py-3 flex-wrap">
       {tools.map((tool, index) => (
         <motion.div
           key={index}
           variants={iconVariants(index * 0.3)}
           initial="initial"
           animate="animate"
-          className={styles.icons}
+          className="text-5xl border border-light_gray block rounded-full p-3 relative group"
         >
-          {tool.icon}
-          <span className={styles.icon_name}>{tool.name}</span>
+          <span>{tool.icon}</span>
+          <span className="absolute text-sm inset-0 text-center flex items-center justify-center bg-black rounded-full text-white opacity-0 group-hover:opacity-100 duration-500 cursor-pointer">
+            {tool.name}
+          </span>
         </motion.div>
       ))}
     </div>

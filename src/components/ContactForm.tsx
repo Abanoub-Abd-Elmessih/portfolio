@@ -3,6 +3,8 @@
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { Button } from "./Button";
+import { IoIosSend } from "react-icons/io";
 
 interface FormData {
   from_name: string;
@@ -42,37 +44,50 @@ export const ContactForm = () => {
   };
   return (
     <form
-      className="row g-3 shadow p-3 rounded-5"
+      className="border py-3 xl:p-6 mt-5 border-light_gray rounded-lg"
       onSubmit={handleSubmit(sendEmail)}
     >
-      <h4>Send me an email :</h4>
-      <div className="col-lg-6">
+      <div className="container flex flex-col gap-5">
+        <h3 className="text-xl">Send me an email :</h3>
         {/* Name Input */}
-        <div className="form-floating mb-3 ">
+        <div className="relative">
           <input
             type="text"
             id="form_name"
-            className={`form-control ${errors.from_name && "is-invalid"}`}
-            placeholder="your name"
+            className={`block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-black peer ${
+              errors.from_name && "focus:border-red-600"
+            }`}
+            placeholder=" "
             {...register("from_name", { required: "⚠ Name is required" })}
           />
-          <label htmlFor="form_name">Name</label>
-          {errors.from_name && (
-            <div className="alert alert-danger mt-2 p-2" role="alert">
+          <label
+            htmlFor="form_name"
+            className="absolute text-sm text-light_gray duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-black  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >
+            Name
+          </label>
+        </div>
+        {errors.from_name && (
+          <div
+            id="alert-border-2"
+            className="flex items-center p-4 mb-4 text-red-800 border-t-4 border-red-500 bg-red-100"
+            role="alert"
+          >
+            <div className="ms-3 text-sm font-medium">
               {errors.from_name.message}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
 
-      {/* Email Input */}
-      <div className="col-lg-6">
-        <div className="form-floating mb-3">
+        {/* Email Input */}
+        <div className="relative">
           <input
             type="email"
             id="form_email"
-            className={`form-control ${errors.user_email && "is-invalid"}`}
-            placeholder="your email"
+            className={`block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-black peer ${
+              errors.user_email && "focus:border-red-600"
+            }`}
+            placeholder=" "
             {...register("user_email", {
               required: "⚠ Email is required",
               pattern: {
@@ -81,41 +96,55 @@ export const ContactForm = () => {
               },
             })}
           />
-          <label htmlFor="form_email">Email</label>
-          {errors.user_email && (
-            <div className="alert alert-danger mt-2 p-2" role="alert">
+          <label
+            htmlFor="form_email"
+            className="absolute text-sm text-light_gray duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-black  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >
+            Email
+          </label>
+        </div>
+        {errors.user_email && (
+          <div
+            id="alert-border-2"
+            className="flex items-center p-4 mb-4 text-red-800 border-t-4 border-red-500 bg-red-100"
+            role="alert"
+          >
+            <div className="ms-3 text-sm font-medium">
               {errors.user_email.message}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
 
-      {/* Message Input */}
-      <div>
-        <div className="form-floating">
-          <textarea
-            className={`form-control ${errors.message && "is-invalid"}`}
-            id="form_message"
-            style={{ height: "120px" }}
-            {...register("message", {
-              required: "⚠ Message cannot be empty",
-              validate: (value) =>
-                value.trim().length > 0 || "⚠ Message cannot be just spaces!",
-            })}
-          />
-          <label htmlFor="form_message">Message</label>
-          {errors.message && (
-            <div className="alert alert-danger mt-2 p-2" role="alert">
+        {/* Message Input */}
+        <textarea
+          id="form_message"
+          rows={4}
+          className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:border-black/80 ring-0"
+          placeholder="Message ..."
+          defaultValue={""}
+          {...register("message", {
+            required: "⚠ Message cannot be empty",
+            validate: (value) =>
+              value.trim().length > 0 || "⚠ Message cannot be just spaces!",
+          })}
+        />
+        {errors.message && (
+          <div
+            id="alert-border-2"
+            className="flex items-center p-4 mb-4 text-red-800 border-t-4 border-red-500 bg-red-100"
+            role="alert"
+          >
+            <div className="ms-3 text-sm font-medium">
               {errors.message.message}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
 
-      {/* Submit Button */}
-      <button type="submit" className="btn btn-dark">
-        Send Message
-      </button>
+        {/* Submit Button */}
+        <Button type="submit">
+          Send Message <IoIosSend className="inline-block text-xl ms-2" />
+        </Button>
+      </div>
     </form>
   );
 };

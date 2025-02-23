@@ -5,12 +5,12 @@ export const TypingAnimation = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Web Developer",
-        2000,
         "Front End Developer",
-        2000,
+        3000,
+        "Web Developer",
+        3000,
         "Freelancer",
-        2000,
+        3000,
       ]}
       wrapper="span"
       speed={30}
