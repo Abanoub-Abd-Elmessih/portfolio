@@ -6,11 +6,9 @@
   font-weight: 400;
 }
 
-.nav_link {
-  transition: all 0.5s;
-}
-.nav_link:hover {
-  transform: translateY(-5px);
+.active {
+  background-color: #d4d4d8;
+  border-radius: 8px;
 }
 
 @media (min-width: 992px) {
@@ -22,6 +20,6 @@
   .navbarList {
     border: 1.5px solid #d1d5db;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 8px 10px;
   }
 }

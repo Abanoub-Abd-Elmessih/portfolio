@@ -1,14 +1,19 @@
+"use client";
 import Link from "next/link";
 import { FaBarsStaggered } from "react-icons/fa6";
 import styles from "./Navbar.module.css";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
+  const pathName = usePathname();
+
   const links = [
     { path: "/", name: "Home" },
     { path: "/about", name: "About" },
     { path: "/projects", name: "Projects" },
     { path: "/contact", name: "Contact" },
   ];
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
@@ -31,8 +36,13 @@ export const Navbar = () => {
             className={`navbar-nav ms-auto gap-2 gap-lg-4 ${styles.navbarList}`}
           >
             {links.map((link) => (
-              <li key={link.path} className={styles.nav_link}>
-                <Link className="nav-link" href={link.path}>
+              <li key={link.path} className={styles.nav_item}>
+                <Link
+                  className={`nav-link px-3 ${
+                    pathName === link.path ? styles.active : ""
+                  }`}
+                  href={link.path}
+                >
                   {link.name}
                 </Link>
               </li>

@@ -5,6 +5,7 @@ import "mdb-ui-kit/css/mdb.min.css";
 import "./globals.css";
 import Script from "next/script";
 import { Navbar } from "@/components/Navbar/Navbar";
+import { Slide, ToastContainer } from "react-toastify";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,9 +28,19 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        <main className="container px-3 flex-grow-1 d-flex flex-column justify-content-lg-center">
+        <main className="container px-3 flex-grow-1 d-flex flex-column">
           {children}
         </main>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+          transition={Slide}
+        />
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"

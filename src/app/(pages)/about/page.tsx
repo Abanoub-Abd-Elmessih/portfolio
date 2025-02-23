@@ -2,7 +2,7 @@ import { Header, SkillsComponent, TimeLine } from "@/components";
 
 const About = () => {
   return (
-    <div className="py-5">
+    <section className="py-5">
       <Header label="Introduction" title="About Me" />
       <div>
         <p className="m-0 mt-4 text-muted letter_spacing">
@@ -30,7 +30,7 @@ const About = () => {
         <Header title="Tech Stack" label="Tools I Work With" />
         <SkillsComponent />
       </div>
-    </div>
+    </section>
   );
 };
 

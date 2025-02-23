@@ -3,7 +3,7 @@ export const Header = ({ label, title }: { label: string; title: string }) => {
     <div className="text-center">
       <h4 className="fw-light fs-5">{label}</h4>
       <h2 className="display-4">{title}</h2>
-      <span className="wrapppp"></span>
+      <span className="small_hr"></span>
     </div>
   );
 };

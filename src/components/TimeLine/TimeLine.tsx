@@ -15,7 +15,7 @@ export const TimeLine = () => {
             Gaining hands-on experience in front-end development by working on
             real-world projects, implementing UI/UX designs, and collaborating
             with a team to enhance web application performance using modern
-            frameworks and best practices.{" "}
+            frameworks and best practices.
           </p>
         </li>
       </ul>
