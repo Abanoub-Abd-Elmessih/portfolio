@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components";
+import { Navbar, ScrollTopBtn } from "@/components";
 import { Slide, ToastContainer } from "react-toastify";
 
 const poppins = Poppins({
@@ -25,6 +25,7 @@ export default function RootLayout({
           <Navbar />
         </header>
         <main className="flex-grow flex flex-col">{children}</main>
+        <ScrollTopBtn />
         <ToastContainer
           position="top-right"
           autoClose={2000}

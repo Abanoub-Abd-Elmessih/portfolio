@@ -54,7 +54,7 @@ export const TechStack = () => {
     },
   });
   return (
-    <div className="flex justify-center gap-5 mt-3 py-3 flex-wrap">
+    <div className="flex justify-center gap-5 mt-3 py-3 flex-wrap select-none">
       {tools.map((tool, index) => (
         <motion.div
           key={index}

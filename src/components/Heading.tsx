@@ -13,7 +13,7 @@ export const Heading = ({
   return (
     <div className={twMerge("text-center", className ?? "")}>
       <p>{label}</p>
-      <h4 className="flex items-center gap-3 justify-center text-4xl">
+      <h4 className="flex items-center gap-3 justify-center text-3xl xl:text-4xl">
         <Divider /> {title} <Divider />
       </h4>
     </div>

@@ -7,3 +7,6 @@ export { Heading } from "./Heading";
 export { TimeLine } from "./TimeLine";
 export { TechStack } from "./TechStack";
 export { ContactForm } from "./ContactForm";
+export { MyTabs } from "./MyTabs";
+export { ProjectCard } from "./ProjectCard";
+export { ScrollTopBtn } from "./ScrollTopBtn";

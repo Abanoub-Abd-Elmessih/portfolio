@@ -119,7 +119,7 @@ export const ContactForm = () => {
         <textarea
           id="form_message"
           rows={4}
-          className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:border-black/80 ring-0"
+          className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:border-black/80 ring-0 outline-none"
           placeholder="Message ..."
           defaultValue={""}
           {...register("message", {

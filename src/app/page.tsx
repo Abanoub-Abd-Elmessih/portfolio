@@ -14,7 +14,7 @@ export default function Home() {
           alt="my photo"
           width={350}
           height={350}
-          className="rounded-full aspect-square object-cover object-top border-black border-2 grayscale hover:grayscale-0 transition-all duration-300"
+          className="rounded-full aspect-square object-cover object-top border-black border-2 grayscale hover:grayscale-0 transition-all duration-500"
         />
       </div>
       {/* Main Section */}
