@@ -49,7 +49,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`xl:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+        className={`xl:hidden overflow-hidden transition-all duration-300 ${
           isOpen ? "max-h-64" : "max-h-0"
         }`}
       >

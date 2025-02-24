@@ -21,13 +21,15 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div className="border shadow-md max-w-md text-light_gray p-3 rounded-lg">
-      <Image
-        src={image}
-        alt={title}
-        width={300}
-        height={300}
-        className="w-full object-cover rounded-lg"
-      />
+      <a href={image} target="_blank">
+        <Image
+          src={image}
+          alt={title}
+          width={1000}
+          height={1000}
+          className="w-full object-cover rounded-lg"
+        />
+      </a>
       <h3 className="font-semibold mt-4 text-xl mb-3">{title}</h3>
       <ScrollArea.Root className="h-24 overflow-hidden rounded-md border">
         <ScrollArea.Viewport className="h-full p-2">
