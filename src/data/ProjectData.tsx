@@ -151,7 +151,8 @@ export const projects: Project[] = [
   {
     id: 12,
     title: "DevFolio",
-    description: "",
+    description:
+      "This project showcases a modern landing page that can be easily customized to suit various types of businesses, portfolios, or personal websites Built with HTML & CSS & Bootstrap.",
     image:
       "https://res.cloudinary.com/dqtqgkpaa/image/upload/v12345678/DevFolio_r0f9ea.png",
     liveDemo: "https://abanoub-abd-elmessih.github.io/DevFolio/",

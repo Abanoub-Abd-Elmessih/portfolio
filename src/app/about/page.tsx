@@ -1,11 +1,20 @@
-import { Heading, TechStack, TimeLine } from "@/components";
+import { Heading, MotionP, TechStack, TimeLine } from "@/components";
 
 export default function About() {
   return (
     <section className="container py-5 text-light_gray">
       <div>
         <Heading label="Introduction" title="About Me" />
-        <p className="tracking-wide mt-5">
+        <MotionP
+          className="tracking-wide mt-5"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            type: "spring",
+            stiffness: 80,
+          }}
+        >
           Hi! I&apos;m a passionate <strong>Frontend Developer</strong> with a
           deep love for crafting seamless and engaging digital experiences. My
           expertise lies in building modern, high-performance web applications
@@ -22,7 +31,7 @@ export default function About() {
           <br />
           I&apos;m always eager to explore new technologies and continuously
           improve my skill set to stay at the forefront of web development.
-        </p>
+        </MotionP>
         <hr className="mt-3" />
         <Heading className="mt-5" title="Experience" label="My Journey" />
         <TimeLine />

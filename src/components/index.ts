@@ -10,3 +10,5 @@ export { ContactForm } from "./ContactForm";
 export { MyTabs } from "./MyTabs";
 export { ProjectCard } from "./ProjectCard";
 export { ScrollTopBtn } from "./ScrollTopBtn";
+export { MotionDiv } from "./MotionDiv";
+export { MotionP } from "./MotionDiv";

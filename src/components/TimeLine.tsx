@@ -1,8 +1,19 @@
 import { LuBriefcaseBusiness } from "react-icons/lu";
+import { MotionDiv } from "./MotionDiv";
 
 export const TimeLine = () => {
   return (
-    <div className="mt-5 ps-3">
+    <MotionDiv
+      className="mt-5 ps-3"
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        type: "spring",
+        stiffness: 80,
+        delay: 0.1,
+      }}
+    >
       <ol className="relative border-s border-gray-200">
         <li className="mb-10 ms-6">
           <span className="absolute flex items-center justify-center w-8 h-8 bg-black rounded-full -start-4 text-white">
@@ -26,6 +37,6 @@ export const TimeLine = () => {
           </p>
         </li>
       </ol>
-    </div>
+    </MotionDiv>
   );
 };

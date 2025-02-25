@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { Button } from "./Button";
 import { IoIosSend } from "react-icons/io";
+import { motion } from "framer-motion";
 
 interface FormData {
   from_name: string;
@@ -43,9 +44,17 @@ export const ContactForm = () => {
       );
   };
   return (
-    <form
+    <motion.form
       className="border py-3 xl:p-6 mt-5 border-light_gray rounded-lg"
       onSubmit={handleSubmit(sendEmail)}
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        type: "spring",
+        stiffness: 80,
+        delay: 0.1,
+      }}
     >
       <div className="container flex flex-col gap-5">
         <h3 className="text-xl">Send me an email :</h3>
@@ -145,6 +154,6 @@ export const ContactForm = () => {
           Send Message <IoIosSend className="inline-block text-xl ms-2" />
         </Button>
       </div>
-    </form>
+    </motion.form>
   );
 };

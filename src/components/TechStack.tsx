@@ -19,6 +19,7 @@ import {
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaJsSquare } from "react-icons/fa";
+import { MotionDiv } from "./MotionDiv";
 
 const tools = [
   { icon: <FaHtml5 />, name: "HTML" },
@@ -54,7 +55,17 @@ export const TechStack = () => {
     },
   });
   return (
-    <div className="flex justify-center gap-5 mt-3 py-3 flex-wrap select-none">
+    <MotionDiv
+      className="flex justify-center gap-5 mt-3 py-3 flex-wrap select-none"
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        type: "spring",
+        stiffness: 80,
+        delay: 0.2,
+      }}
+    >
       {tools.map((tool, index) => (
         <motion.div
           key={index}
@@ -69,6 +80,6 @@ export const TechStack = () => {
           </span>
         </motion.div>
       ))}
-    </div>
+    </MotionDiv>
   );
 };

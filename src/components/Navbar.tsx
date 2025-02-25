@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { LuMenu, LuX } from "react-icons/lu";
+import { motion } from "framer-motion";
 
 export const Navbar = () => {
   const pathName = usePathname();
@@ -16,7 +17,16 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="container text-light_gray">
+    <motion.nav
+      className="container text-light_gray"
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        type: "spring",
+        stiffness: 80,
+      }}
+    >
       {/* Desktop Menu */}
       <div className="p-3 flex justify-between items-center">
         <Link href="/" className="uppercase text-2xl">
@@ -71,6 +81,6 @@ export const Navbar = () => {
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 };

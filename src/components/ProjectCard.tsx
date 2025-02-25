@@ -3,6 +3,7 @@ import { IconType } from "react-icons";
 import { Button } from "./Button";
 import { LuMoveUpRight } from "react-icons/lu";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
+import { MotionDiv } from "./MotionDiv";
 
 interface ProjectCardProps {
   image: string;
@@ -20,18 +21,27 @@ export const ProjectCard = ({
   liveDemo,
 }: ProjectCardProps) => {
   return (
-    <div className="border shadow-md max-w-md text-light_gray p-3 rounded-lg">
+    <MotionDiv
+      className="border-2 border-black/70 shadow-lg max-w-lg text-light_gray p-3 rounded-lg"
+      initial={{ y: 30, x: 30, opacity: 0 }}
+      whileInView={{ y: 0, x: 0, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        type: "spring",
+        stiffness: 80,
+      }}
+    >
       <a href={image} target="_blank">
         <Image
           src={image}
           alt={title}
           width={1000}
           height={1000}
-          className="w-full object-cover rounded-lg"
+          className="w-full object-cover rounded-lg border-2 p-1 border-gray-300"
         />
       </a>
       <h3 className="font-semibold mt-4 text-xl mb-3">{title}</h3>
-      <ScrollArea.Root className="h-24 overflow-hidden rounded-md border">
+      <ScrollArea.Root className="h-24 overflow-hidden rounded-md  border-gray-300 border-2">
         <ScrollArea.Viewport className="h-full p-2">
           <p className="text-sm">{description}</p>
         </ScrollArea.Viewport>
@@ -69,33 +79,6 @@ export const ProjectCard = ({
           </a>
         </Button>
       )}
-    </div>
+    </MotionDiv>
   );
 };
-
-// const [showText, setShowText] = useState(false);
-// const textRef = useRef<HTMLDivElement>(null);
-
-{
-  /* <div
-ref={textRef}
-className="overflow-hidden transition-all duration-300 ease-in-out"
-style={{
-  maxHeight: showText ? `${textRef.current?.scrollHeight}px` : "48px",
-}}
->
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, quos
-  assumenda dicta ducimus dolore eum nostrum et placeat iste
-  perspiciatis repellendus? Quos laboriosam architecto delectus eveniet
-  blanditiis tenetur placeat ea!
-</p>
-</div>
-<button
-onClick={() => setShowText(!showText)}
-className="text-blue-500 focus:outline-none mt-2"
-aria-expanded={showText}
->
-{showText ? "Show Less" : "Show More"}
-</button> */
-}

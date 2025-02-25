@@ -1,4 +1,10 @@
-import { Button, Divider, MyLinks, TypingAnimation } from "@/components";
+import {
+  Button,
+  Divider,
+  MotionDiv,
+  MyLinks,
+  TypingAnimation,
+} from "@/components";
 import Image from "next/image";
 import Link from "next/link";
 import { LuDownload, LuMoveRight, LuMoveUpRight } from "react-icons/lu";
@@ -6,9 +12,18 @@ import { PiHandWavingBold } from "react-icons/pi";
 
 export default function Home() {
   return (
-    <section className="container py-10 flex-grow flex flex-col xl:flex-row-reverse xl:items-center xl:justify-around gap-7 text-light_gray">
+    <section className="container py-10 flex-grow flex flex-col xl:flex-row-reverse xl:items-center xl:justify-around gap-7 text-light_gray overflow-hidden">
       {/* Image Section */}
-      <div className="center-screen">
+      <MotionDiv
+        className="center-screen"
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{
+          duration: 0.8,
+          type: "spring",
+          stiffness: 80,
+        }}
+      >
         <Image
           src={"/abanoub.jpg"}
           alt="my photo"
@@ -16,9 +31,19 @@ export default function Home() {
           height={350}
           className="rounded-full aspect-square object-cover object-top border-black border-2 grayscale hover:grayscale-0 transition-all duration-500"
         />
-      </div>
+      </MotionDiv>
       {/* Main Section */}
-      <div className="flex flex-col gap-4">
+      <MotionDiv
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{
+          duration: 0.8,
+          type: "spring",
+          stiffness: 80,
+          delay: 0.2,
+        }}
+        className="flex flex-col gap-4"
+      >
         <h3 className="text-4xl lg:text-6xl font-medium tracking-wide">
           Hello I&apos;m Abanoub
           <PiHandWavingBold className="inline-block ms-2" />
@@ -49,9 +74,19 @@ export default function Home() {
             </a>
           </Button>
         </div>
-      </div>
+      </MotionDiv>
       {/* Links Section */}
-      <div className="flex justify-between xl:flex-col gap-10">
+      <MotionDiv
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{
+          duration: 0.8,
+          type: "spring",
+          stiffness: 80,
+          delay: 0.4,
+        }}
+        className="flex justify-between xl:flex-col gap-10"
+      >
         <MyLinks />
         <Link
           href={"/about"}
@@ -59,7 +94,7 @@ export default function Home() {
         >
           About <LuMoveRight />
         </Link>
-      </div>
+      </MotionDiv>
     </section>
   );
 }
