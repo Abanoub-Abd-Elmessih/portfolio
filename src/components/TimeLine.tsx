@@ -4,9 +4,9 @@ import { MotionDiv } from "./MotionDiv";
 export const TimeLine = () => {
   return (
     <MotionDiv
-      className="mt-5 ps-3"
+      className="mt-5 ps-3 motion-div"
       initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{
         duration: 0.8,
         type: "spring",

@@ -45,10 +45,10 @@ export const ContactForm = () => {
   };
   return (
     <motion.form
-      className="border py-3 xl:p-6 mt-5 border-light_gray rounded-lg"
+      className="border py-3 xl:p-6 mt-5 border-light_gray rounded-lg motion-div"
       onSubmit={handleSubmit(sendEmail)}
       initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{
         duration: 0.8,
         type: "spring",

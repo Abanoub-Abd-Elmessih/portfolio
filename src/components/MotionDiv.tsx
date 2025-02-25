@@ -1,4 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-export const MotionDiv = motion.div;
-export const MotionP = motion.p;
+import { memo } from "react";
+
+export const MotionDiv = memo(motion.div);
+export const MotionP = memo(motion.p);

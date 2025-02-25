@@ -6,9 +6,9 @@ export default function About() {
       <div>
         <Heading label="Introduction" title="About Me" />
         <MotionP
-          className="tracking-wide mt-5"
+          className="tracking-wide mt-5 motion-div"
           initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{
             duration: 0.8,
             type: "spring",

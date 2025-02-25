@@ -15,9 +15,9 @@ export default function Home() {
     <section className="container py-10 flex-grow flex flex-col xl:flex-row-reverse xl:items-center xl:justify-around gap-7 text-light_gray overflow-hidden">
       {/* Image Section */}
       <MotionDiv
-        className="center-screen"
+        className="center-screen motion-div"
         initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
+        animate={{ scale: 1 }}
         transition={{
           duration: 0.8,
           type: "spring",
@@ -35,14 +35,14 @@ export default function Home() {
       {/* Main Section */}
       <MotionDiv
         initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
+        animate={{ scale: 1 }}
         transition={{
           duration: 0.8,
           type: "spring",
           stiffness: 80,
           delay: 0.2,
         }}
-        className="flex flex-col gap-4"
+        className="flex flex-col gap-4 motion-div"
       >
         <h3 className="text-4xl lg:text-6xl font-medium tracking-wide">
           Hello I&apos;m Abanoub
@@ -78,14 +78,14 @@ export default function Home() {
       {/* Links Section */}
       <MotionDiv
         initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
+        animate={{ scale: 1 }}
         transition={{
           duration: 0.8,
           type: "spring",
           stiffness: 80,
           delay: 0.4,
         }}
-        className="flex justify-between xl:flex-col gap-10"
+        className="flex justify-between xl:flex-col gap-10 motion-div"
       >
         <MyLinks />
         <Link

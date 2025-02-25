@@ -22,14 +22,15 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <MotionDiv
-      className="border-2 border-black/70 shadow-lg max-w-lg text-light_gray p-3 rounded-lg"
-      initial={{ y: 30, x: 30, opacity: 0 }}
-      whileInView={{ y: 0, x: 0, opacity: 1 }}
+      className="border-2 border-black/70 shadow-lg max-w-lg text-light_gray p-3 rounded-lg motion-div"
+      initial={{ y: 40, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{
         duration: 0.8,
         type: "spring",
-        stiffness: 80,
+        stiffness: 100,
       }}
+      viewport={{ once: true }}
     >
       <a href={image} target="_blank">
         <Image

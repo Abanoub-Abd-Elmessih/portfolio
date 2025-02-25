@@ -56,9 +56,9 @@ export const TechStack = () => {
   });
   return (
     <MotionDiv
-      className="flex justify-center gap-5 mt-3 py-3 flex-wrap select-none"
+      className="flex justify-center gap-5 mt-3 py-3 flex-wrap select-none motion-div"
       initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{
         duration: 0.8,
         type: "spring",
