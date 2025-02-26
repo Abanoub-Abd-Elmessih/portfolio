@@ -38,7 +38,7 @@ export default function Home() {
         }}
         className="flex flex-col gap-4 motion-div"
       >
-        <h3 className="text-4xl lg:text-6xl font-medium tracking-wide flex gap-2">
+        <h3 className="text-4xl lg:text-6xl font-medium tracking-wide">
           Hello I&apos;m Abanoub
           <PiHandWavingBold className="inline-block ms-2" />
         </h3>
