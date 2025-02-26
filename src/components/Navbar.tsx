@@ -40,6 +40,7 @@ export const Navbar = () => {
         </ul>
         {/* Mobile Menu Button */}
         <button
+          type="button"
           className="xl:hidden text-3xl"
           onClick={() => setIsOpen(!isOpen)}
         >

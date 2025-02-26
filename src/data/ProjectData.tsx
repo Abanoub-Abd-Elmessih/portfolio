@@ -54,7 +54,8 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Smooth Landing",
-    description: "",
+    description:
+      "Smooth Landing is a modern and dynamic landing page built with Next.js, TypeScript, and Framer Motion. It features a sleek design with smooth animations, enhancing user engagement and providing a seamless browsing experience. Optimized for high performance and responsiveness, this landing page is perfect for showcasing products or services in a professional and visually appealing way.",
     image:
       "https://res.cloudinary.com/dqtqgkpaa/image/upload/v12345678/smooth-landing._suzhqc.png",
     liveDemo: "https://smooth-landing.vercel.app/",
@@ -68,7 +69,8 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "Anime Vault",
-    description: "",
+    description:
+      "Anime Vault is a learning project focused on Next.js Server and Infinite Scroll. It provides a seamless browsing experience, dynamically loading anime content as the user scrolls. Built with performance and scalability in mind, this project showcases efficient data fetching and smooth user interactions, making it a great example of modern web development techniques.",
     image:
       "https://res.cloudinary.com/dqtqgkpaa/image/upload/v12345678/animeVault_okggpl.png",
     liveDemo: "https://anime-vault-beta-brown.vercel.app/",
@@ -142,7 +144,8 @@ export const projects: Project[] = [
   {
     id: 11,
     title: "Random Quotes generator",
-    description: "",
+    description:
+      "Quotes App is a simple yet engaging web application built with HTML, CSS, and Vanilla JavaScript. Designed as a learning project, it generates random quotes dynamically, helping users discover inspiring words with each click. This project showcases fundamental web development skills, including DOM manipulation and event handling. ",
     image:
       "https://res.cloudinary.com/dqtqgkpaa/image/upload/v12345678/QUOTES_usd1ls.png",
     liveDemo: "https://abanoub-abd-elmessih.github.io/Quotes-app/",
@@ -222,13 +225,14 @@ export const projects: Project[] = [
       "Bookmark app used to save your favorite Websites URL using JavaScript and you can Visit or Delete or update This url.",
     image:
       "https://res.cloudinary.com/dqtqgkpaa/image/upload/v12345678/Bookmark-App_z7r5o1.png",
-    liveDemo: "https://abanoub-abd-elmessih.github.io/Egyption-Party/",
+    liveDemo: "https://abanoub-abd-elmessih.github.io/Bookmark-App/",
     tools: [FaHtml5, FaCss3, FaBootstrap, FaJsSquare, MdOutlineSdStorage],
   },
   {
     id: 19,
     title: "Portfolio",
-    description: "",
+    description:
+      "My portfolio is a modern, multi-page website built with Next.js, TypeScript, and Framer Motion. It showcases my skills, projects, and experience with a sleek design and smooth animations for an engaging user experience. Using Next.js Router, navigation is seamless, ensuring fast and dynamic transitions between pages. Optimized for performance and responsiveness, this portfolio reflects my expertise in front-end development and my ability to create visually appealing, high-performing web applications. ",
     image:
       "https://res.cloudinary.com/dqtqgkpaa/image/upload/v12345678/portfolio_wbbcv2.png",
     liveDemo: "https://abanoub-dev-portfolio.vercel.app/",

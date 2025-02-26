@@ -1,10 +1,4 @@
-import {
-  Button,
-  Divider,
-  MotionDiv,
-  MyLinks,
-  TypingAnimation,
-} from "@/components";
+import { Divider, MotionDiv, MyLinks, TypingAnimation } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
 import { LuDownload, LuMoveRight, LuMoveUpRight } from "react-icons/lu";
@@ -29,7 +23,7 @@ export default function Home() {
           alt="my photo"
           width={350}
           height={350}
-          className="rounded-full aspect-square object-cover object-top border-black border-2 grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-full rounded-full aspect-square object-cover object-top border-black border-2 grayscale hover:grayscale-0 transition-all duration-500"
         />
       </MotionDiv>
       {/* Main Section */}
@@ -44,7 +38,7 @@ export default function Home() {
         }}
         className="flex flex-col gap-4 motion-div"
       >
-        <h3 className="text-4xl lg:text-6xl font-medium tracking-wide">
+        <h3 className="text-4xl lg:text-6xl font-medium tracking-wide flex gap-2">
           Hello I&apos;m Abanoub
           <PiHandWavingBold className="inline-block ms-2" />
         </h3>
@@ -62,17 +56,20 @@ export default function Home() {
         </p>
         {/* Buttons */}
         <div className="flex gap-3">
-          <Button>
-            <Link href={"/contact"}>
-              Contact Me
-              <LuMoveUpRight className="inline-block" color="white" />
-            </Link>
-          </Button>
-          <Button>
-            <a href="/abanoub_abdelmessihResume.pdf" download={true}>
-              Download CV <LuDownload className="inline-block" color="white" />
-            </a>
-          </Button>
+          <Link
+            href={"/contact"}
+            className="bg-black text-white text-sm px-7 py-2 rounded-md hover:bg-black/90 duration-300"
+          >
+            Contact Me
+            <LuMoveUpRight className="inline-block" color="white" />
+          </Link>
+          <a
+            href="/abanoub_abdelmessihResume.pdf"
+            download={true}
+            className="bg-black text-white text-sm px-7 py-2 rounded-md hover:bg-black/90 duration-300"
+          >
+            Download CV <LuDownload className="inline-block" color="white" />
+          </a>
         </div>
       </MotionDiv>
       {/* Links Section */}

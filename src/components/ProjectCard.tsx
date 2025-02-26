@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { IconType } from "react-icons";
-import { Button } from "./Button";
 import { LuMoveUpRight } from "react-icons/lu";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { MotionDiv } from "./MotionDiv";
@@ -69,16 +68,14 @@ export const ProjectCard = ({
       </div>
 
       {liveDemo && (
-        <Button>
-          <a
-            href={liveDemo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            Live Demo <LuMoveUpRight />
-          </a>
-        </Button>
+        <a
+          href={liveDemo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center w-fit gap-2 bg-black text-white text-sm px-7 py-2 rounded-md hover:bg-black/90 duration-300"
+        >
+          Live Demo <LuMoveUpRight />
+        </a>
       )}
     </MotionDiv>
   );
